@@ -1,7 +1,7 @@
 """Selftest for computers (cmp-c: taxonomy + assembly gates +
 use-case profile fits).
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m computers.selftest_computers
+  PYTHONPATH=.:modules python3 -m computers.computers_selftest
 Exercises the taxonomy's coverage of PART_KINDS, the DFA-style
 gate engine (answers, refusals, honest unverified), the
 composition view's derived level, and the ai-6-shaped profile fit
@@ -17,14 +17,14 @@ from computerparts.parts_seed import (
     SEED_COMPUTER_BUILDS, SEED_COMPUTER_PARTS,
 )
 
-from computers.computers_fit import fit_matrix, fit_profile
-from computers.computers_gates import (
+from computers.custom.computers_fit import fit_matrix, fit_profile
+from computers.custom.computers_gates import (
     assembly_gate_report, composition_view,
 )
-from computers.computers_pages_seed import (
+from computers.computers_page import (
     SEED_COMPUTERS_PAGE_DISPLAYS,
 )
-from computers.computers_ports import (
+from computers.computers_ports_basis import (
     SEED_INTERCONNECTS, SEED_PORT_EXAMPLE_PARTS,
     SEED_PORT_PART_CLASSES, interconnect_matrix,
     port_budget_gates, viable_links,

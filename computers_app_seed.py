@@ -1,5 +1,5 @@
 """
-@module computers.computers_app
+@module computers.computers_app_seed
 
 THE APP ROW: Computer Assembly as a `PolariAppDefinition` — the
 cmp-c arc's front door. The 2026-08-25 session built the module,
@@ -11,7 +11,7 @@ for the same reason as climate_app: `pol modules drop computers`
 removes the app row's source with its code, and the file stays in
 the dev-cmpc-1 commit set without touching the chip arc's — the
 two arcs remain SEPARABLE (COMPUTER_COMPOSITION_PLAN rule; the
-chip counterpart is cntfet/cnt_app.py).
+chip counterpart is cntfet/cnt_app_seed.py).
 
 New discipline string `computing`, new persona `computer-builder`
 — both DERIVED indexes in the nav machinery, so each is a row,
@@ -22,7 +22,7 @@ not a code change.
 
 import json as _json
 
-from composition.seed_upsert import upsert_seed_pairs
+from composition.custom.seed_upsert import upsert_seed_pairs
 
 PROV = 'cmp-c-nav'
 

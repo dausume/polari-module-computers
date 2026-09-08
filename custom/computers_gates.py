@@ -1,5 +1,5 @@
 """
-@module computers.computers_gates
+@module computers.custom.computers_gates
 
 cmp-c-2: assembly feasibility as DFA-STYLE NAMED GATES (the
 composition audit_promotion discipline applied to computer
@@ -9,7 +9,7 @@ that quotes the failing numbers; an undeclared spec yields
 overall verdict never rounds an unverified up to a pass.
 
 The four ai-8 checks (socket, ram-type, psu-wattage,
-gpu-clearance) are REUSED from computerparts.parts_assembly — this
+gpu-clearance) are REUSED from computerparts.custom.parts_assembly — this
 module adds the gates the taxonomy's new declared specs enable:
 
   ram-slots     count of ram modules <= motherboard.ram_slots
@@ -21,12 +21,12 @@ composition is never imported here.
 
 @consumers
   - computers.computers_api (assembly payloads)
-  - computers.selftest_computers
+  - computers.computers_selftest
 """
 
 import json
 
-from computerparts.parts_assembly import assembly_check
+from computerparts.custom.parts_assembly import assembly_check
 from computerparts.parts_basis import build_report
 
 from computers.computers_basis import field_of
@@ -115,7 +115,7 @@ def extended_gates(build, parts_by_name):
 def assembly_gate_report(assembly, build, parts_by_name):
     """The full cmp-c-2 gate report for one assembly: ai-8 checks
     + extended gates + derived cost, refusals named per gate."""
-    from computers.computers_ports import port_budget_gates
+    from computers.computers_ports_basis import port_budget_gates
     base = assembly_check(build, parts_by_name)
     gates = (list(base['checks'])
              + extended_gates(build, parts_by_name)

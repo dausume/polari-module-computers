@@ -1,5 +1,5 @@
 """
-@module computers.computers_ports
+@module computers.computers_ports_basis
 
 cmp-c-6: interconnects as DATA. The composition_view hardcoded
 its iface() pairs and the gates knew only ram-slots/slot-budget;
@@ -27,9 +27,9 @@ kind `usb-expansion` (the parts that ENABLE USB attachment at all
 — PCIe USB controller cards, hubs, front-panel header adapters).
 
 @consumers
-  - computers.computers_gates (port-budget gates in the report)
+  - computers.custom.computers_gates (port-budget gates in the report)
   - computers.computers_api (/api/computers/interconnects*)
-  - computers.selftest_computers
+  - computers.computers_selftest
   - polariServer (class registration + seed pass via
     computers_seed.seed_computers)
 """
@@ -165,7 +165,7 @@ def port_budget_gates(build, parts_by_name):
     Verdicts: ok (enough), mismatch (SOME provided but short —
     a declared shortage), unverified (nothing declares provision
     of a required token, or no part declares ports at all)."""
-    from computers.computers_gates import _parts_of
+    from computers.custom.computers_gates import _parts_of
     parts = _parts_of(build, parts_by_name)
     declared = [p for p in parts if part_ports(p)['declared']]
     gates = []

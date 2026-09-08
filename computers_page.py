@@ -1,5 +1,5 @@
 """
-@module computers.computers_pages_seed
+@module computers.computers_page
 
 cmp-c-4: the /display/computers page as PURE DATA — rows of the
 two generic registered components only (class-rows-table /

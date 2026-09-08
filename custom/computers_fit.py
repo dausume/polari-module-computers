@@ -1,5 +1,5 @@
 """
-@module computers.computers_fit
+@module computers.custom.computers_fit
 
 cmp-c-3: profile fit as the ai-6 hosting-gauge verdict ladder
 applied to a BUILD instead of a live machine — a profile is a
@@ -19,7 +19,7 @@ assumption).
 
 @consumers
   - computers.computers_api (fit payloads)
-  - computers.selftest_computers
+  - computers.computers_selftest
 """
 
 import json
